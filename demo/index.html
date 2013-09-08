@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>iOS overflow scrollToTop</title>
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="../scrollToTop.js" type="text/javascript" charset="utf-8"></script>
+    <script src="fastclick.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
+  </head>
+  
+  <body>
+    <header>Long list</header>
+    <div class="content scrollable"></div>
+  </body>
+
+  <script type="text/javascript" charset="utf-8">
+    (function() {
+      
+      // generate demo list
+      var contentEl = document.querySelector(".scrollable");
+      var demoList = '<ul>';
+      var col;
+      for (var i = 0; i < 100; i++) {
+        col = 255-i;
+        demoList += '<li style="background: rgb('+col+','+col+','+col+')">List Item '+(i+1)+'</li>';
+      }
+      demoList += '</ul>';
+      contentEl.innerHTML = demoList;
+
+      // add scrollToTop listener
+      var headerEl = document.querySelector("header");
+      headerEl.addEventListener('click', function() {
+        window.scrollToTop(contentEl);
+      });
+
+      // misc stuff to improve demo behaviour on iOS device
+      window.FastClick.attach(document.body);
+      document.addEventListener('touchmove', function (e) { e.preventDefault(); });
+      contentEl.addEventListener('touchmove', function (e) { e.stopPropagation(); });
+    }());
+  </script>
+
+</html>
