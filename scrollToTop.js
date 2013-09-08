@@ -5,7 +5,7 @@
 
 var scrollToTop = function(el) {
 
-  el = el || document.querySelector(el);
+  el = typeof el === 'object' ? el : document.querySelector(el);
   if (!el) { return; }
 
   var offset = el.scrollTop;
