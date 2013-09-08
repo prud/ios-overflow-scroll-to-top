@@ -1,7 +1,7 @@
 # iOS Overflow ScrollToTop
 Using `-webkit-overflow-scrolling:touch` provides native-like scrolling on iOS web apps. However, when using it on any element other than `document.body`, it will break the native *scroll-to-top* behavior when tapping the status bar. This tiny script provides a replacement that even works when the scrollarea is currently bouncing or in momentum / inertia.
 
-Check the [demo](http://prud.github.io/ios-overflow-scroll-to-top/demo/) on your iOS device (short: [goo.gl/6HJ9oG](goo.gl/6HJ9oG)). Scroll down and tap the header to scroll up.
+Check the [demo](http://prud.github.io/ios-overflow-scroll-to-top/demo/) on your iOS device (short: [goo.gl/6HJ9oG](http://goo.gl/6HJ9oG)). Scroll down and tap the header to scroll up.
 
 ## Usage
     headerEl.addEventListener('click', function() {
